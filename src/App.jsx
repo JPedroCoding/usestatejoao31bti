@@ -9,7 +9,14 @@ export function App() {
   };
 
   const Visibilidade = () => {
-    setVisivel(!Visivel);
+    if (Visivel === true) {
+      setVisivel(false);
+    } else {
+      setVisivel(true);
+    }
+    
+    //ou return setVisivel(!Visivel)
+
   };
 
   return (
@@ -28,14 +35,14 @@ export function App() {
         </div>
         
         <div>
-          {Visivel ? (
+          {Visivel === true ? (
             <p className="text-lg text-gray-700 mb-2">Olá mundo</p>
-          ) : null}
+          ) : "" } 
           <button 
             onClick={Visibilidade}
             className="w-full bg-gray-900 text-white py-4 px-8 rounded hover:bg-gray-700 transition"
           >
-            {Visivel ? 'Esconder' : 'Mostrar'}
+            {Visivel === true ? 'Esconder' : 'Mostrar'}
           </button>
         </div>
       </div>
